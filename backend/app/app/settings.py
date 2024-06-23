@@ -32,7 +32,8 @@ ALLOWED_HOSTS = []
 LOCAL_APPS = [
     'common.apps.CommonConfig',
     'core.apps.CoreConfig',
-    'users.apps.UsersConfig'
+    'users.apps.UsersConfig',
+    'books.apps.BooksConfig'
 ]
 
 THIRD_PARTY_APP = [
@@ -150,7 +151,7 @@ AUTH_USER_MODEL = 'users.BaseUser'
 
 # Django rest_framework config
 REST_FRAMEWORK = {
-    'EXCEPTION_HANDLER': 'core.exceptions.custom_exception_handler', 
+    # 'EXCEPTION_HANDLER': 'core.exceptions.custom_exception_handler', 
 
     'DEFAULT_SCHEMA_CLASS': 'drf_spectacular.openapi.AutoSchema',
 
