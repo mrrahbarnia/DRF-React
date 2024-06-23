@@ -11,6 +11,7 @@ https://docs.djangoproject.com/en/4.2/ref/settings/
 """
 import os
 
+from datetime import timedelta
 from pathlib import Path
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
@@ -30,6 +31,7 @@ ALLOWED_HOSTS = []
 
 LOCAL_APPS = [
     'common.apps.CommonConfig',
+    'core.apps.CoreConfig',
     'users.apps.UsersConfig'
 ]
 
@@ -148,7 +150,21 @@ AUTH_USER_MODEL = 'users.BaseUser'
 
 # Django rest_framework config
 REST_FRAMEWORK = {
+    'EXCEPTION_HANDLER': 'core.exceptions.custom_exception_handler', 
+
     'DEFAULT_SCHEMA_CLASS': 'drf_spectacular.openapi.AutoSchema',
+
+    'DEFAULT_AUTHENTICATION_CLASSES': (
+        'rest_framework_simplejwt.authentication.JWTAuthentication', 
+    ),
+
+    'COERCE_DECIMAL_TO_STRING': False,
+}
+
+# JWT config
+SIMPLE_JWT = {
+    "ACCESS_TOKEN_LIFETIME": timedelta(minutes=5),
+    "REFRESH_TOKEN_LIFETIME": timedelta(days=90)
 }
 
 # Redis config
