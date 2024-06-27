@@ -9,6 +9,11 @@ html {
     padding: 0;
 }
 
+.header {
+    max-width: 70%;
+    margin: auto;
+}
+
 .ul {
     display: flex;
     align-items: center;
@@ -17,8 +22,28 @@ html {
 
 .ul li {
     list-style-type: none;
+    padding: 2rem;
 }
 
 .ul a {
     text-decoration: none;
+    font-size: 1.4rem;
+    color: #607D8B;
+}
+
+.ul a:hover,
+.ul a.active {
+    color: black;
+}
+
+.search {
+    text-align: center;
+}
+
+.search input {
+    width: 80%;
+    padding: 0.4rem 0.8rem;
+    border: 1px solid #607D8B;
+    outline: none;
+    border-radius: 0.6rem;
 }

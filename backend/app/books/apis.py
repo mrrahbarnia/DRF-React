@@ -8,18 +8,33 @@ from rest_framework import permissions
 from drf_spectacular.utils import extend_schema
 
 from core import services, selectors
-
+from common.pagination import (
+    get_paginated_response_context,
+    LimitOffsetPagination
+)
 
 class AllBookApi(APIView):
 
+    class Pagination(LimitOffsetPagination):
+        default_limit = 5
+
     class AllBookSerializer(serializers.Serializer):
         name = serializers.CharField()
+        slug = serializers.CharField()
         description = serializers.CharField()
-    
+        image = serializers.ImageField()
+
     def get(self: Self, request: Request, *args: Any, **kwargs: Any) -> Response:
         qs = selectors.all_books()
-        response = self.AllBookSerializer(qs, many=True).data
-        return Response(response, status=status.HTTP_200_OK)
+        # response = self.AllBookSerializer(qs, many=True).data
+        return get_paginated_response_context(
+            pagination_class=self.Pagination,
+            serializer_class=self.AllBookSerializer,
+            queryset=qs,
+            request=request,
+            view=self
+        )
+    
 
 class DetailBookApi(APIView):
 

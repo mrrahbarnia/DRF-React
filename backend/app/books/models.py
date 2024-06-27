@@ -27,6 +27,7 @@ class Book(BaseModel):
         upload_to=book_image_file_path, null=True, blank=True
     )
     views = models.PositiveIntegerField(default=0, null=True, blank=True)
+    # TODO: Condition indexing on is_active=True
     is_active = models.BooleanField(default=True)
 
     def __str__(self) -> str:

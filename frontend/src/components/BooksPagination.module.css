@@ -1,0 +1,19 @@
+.ul {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.ul a {
+    text-decoration: none;
+    font-size: 1.3rem;
+    background: black;
+    color: #fff;
+    padding: 0.1rem 0.8rem;
+    border-radius: 0.5rem;
+}
+
+.ul a:hover {
+    background: rgb(90, 77, 77);
+    color: #fff;
+}

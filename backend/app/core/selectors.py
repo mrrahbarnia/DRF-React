@@ -4,7 +4,9 @@ from django.db import transaction
 from books.models import Book
 
 def all_books() -> QuerySet[Book]:
-    return Book.objects.only('name', 'description').filter(is_active=True)
+    return Book.objects.only(
+        'name', 'description', 'image', 'slug'
+    ).filter(is_active=True)
 
 @transaction.atomic
 def get_book(slug: str) -> Book:

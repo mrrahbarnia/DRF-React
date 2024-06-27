@@ -1,16 +1,13 @@
 import { Fragment } from "react"
 
+import Error from "../components/Error";
 import MainNavigation from "../components/MainNavigation"
-import classes from "./ErrorPage.module.css";
 
 const ErrorPage = () => {
     return (
         <Fragment>
             <MainNavigation />
-            <main className={classes.main}>
-                <p>An error occurred!</p>
-                <p>Page not found.</p>
-            </main>
+            <Error />
         </Fragment>
     )
 }
