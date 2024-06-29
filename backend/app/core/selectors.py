@@ -6,7 +6,7 @@ from books.models import Book
 def all_books() -> QuerySet[Book]:
     return Book.objects.only(
         'name', 'description', 'image', 'slug'
-    ).filter(is_active=True)
+    ).filter(is_active=True).order_by('-created_at')
 
 @transaction.atomic
 def get_book(slug: str) -> Book:

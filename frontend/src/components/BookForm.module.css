@@ -1,0 +1,68 @@
+.wrapper {
+    margin: 3rem auto;
+    width: 70%;
+    border-radius: 0.6rem;
+    background-color: #CFD8DC;
+    box-shadow: 1px 1px 0.7rem;
+    display: flex;
+    flex-direction: column;
+    padding: 3rem;
+    gap: 1rem;
+}
+
+
+
+.text {
+    display: flex;
+    flex-direction: column;
+    max-width: 70%;
+    width: 100%;
+    margin: auto;
+    gap: 0.3rem;
+}
+
+.text input {
+    outline: none;
+    border: none;
+    border-radius: 0.4rem;
+    height: 2rem;
+    padding: 0 0.7rem;
+}
+
+.image {
+    display: flex;
+    flex-direction: row;
+    max-width: 70%;
+    width: 100%;
+    margin: auto;
+    gap: 1rem;
+    align-items: center;
+}
+
+.text textarea {
+    border: none;
+    resize: none;
+    outline: none;
+    border-radius: 0.4rem;
+    padding: 0.7rem;
+}
+
+.btn {
+    max-width: 70%;
+    width: 100%;
+    margin: auto;
+}
+
+.btn button {
+    width: 100%;
+    outline: none;
+    border: none;
+    border-radius: 0.4rem;
+    padding: 1rem;
+    cursor: pointer;
+}
+
+.btn button:hover {
+    background-color: #CFD8DC;
+    border: 3px solid black;
+}

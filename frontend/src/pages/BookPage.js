@@ -1,5 +1,5 @@
 import { Fragment } from "react";
-import { useLoaderData } from "react-router-dom";
+import { useLoaderData, json } from "react-router-dom";
 
 import Book from "../components/Book";
 
@@ -21,5 +21,7 @@ export const loader = async({ request }) => {
 
     if (response.status === 200) {
         return response;
+    } else {
+        return json(({message: 'Something went wrong!'}, {status: 500}));
     }
 }

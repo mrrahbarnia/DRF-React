@@ -1,0 +1,25 @@
+.wrapper {
+    display: flex;
+    flex-direction: column;
+    max-width: 70%;
+    margin: 3rem auto;
+}
+
+.book__image img {
+    width: 100%;
+    object-fit: cover;
+}
+
+.book__text {
+    display: flex;
+    flex-direction: column;
+    gap: 0.7rem;
+    margin-top: 1rem;
+}
+
+.book__info {
+    margin-top: 1rem;
+    align-items: center;
+    display: flex;
+    justify-content: space-between;
+}

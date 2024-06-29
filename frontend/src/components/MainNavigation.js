@@ -12,6 +12,11 @@ const MainNavigation = () => {
                     }>Login</NavLink>
                 </li>
                 <li>
+                    <NavLink to="/add-book" className={({isActive}) =>
+                        isActive ? classes.active : undefined
+                    }>Add Book</NavLink>
+                </li>
+                <li>
                     <NavLink to="book" className={({isActive}) =>
                         isActive ? classes.active : undefined
                     }>Books</NavLink>

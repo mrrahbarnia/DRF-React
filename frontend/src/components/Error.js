@@ -1,10 +1,10 @@
 import classes from './Error.module.css';
 
-const Error = () => {
+const Error = (props) => {
     return (
         <div className={classes.error}>
-            <p>An error occurred!</p>
-            <p>Something went wrong...</p>
+            <p>{props.statusCode}</p>
+            <p>{props.message}</p>
         </div>
     )
 };
